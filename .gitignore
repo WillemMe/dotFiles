@@ -1,0 +1,14 @@
+# Ignore all the things
+*
+
+# But not these (with exceptions)
+!.gitignore
+!*.vim/
+!*.vim/*
+!.vim/.netrwhist
+!*.vimrc
+!*.bashrc
+!*.minttyrc
+!.config*
+!.config*/*/*
+!.config*/*
