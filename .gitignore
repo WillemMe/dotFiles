@@ -1,5 +1,5 @@
 # Ignore all the things
-*
+
 
 # But not these (with exceptions)
 !.gitignore
@@ -9,6 +9,4 @@
 !*.vimrc
 !*.bashrc
 !*.minttyrc
-!.config*
-!.config*/*/*
-!.config*/*
+!.config/*

@@ -1,0 +1,28 @@
+#!/usr/bin/sh
+
+## Autostart Programs ##
+pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/autoload/keys/sxhkdrc 2>>/tmp/sxhkd.log &
+$HOME/.config/polybar/scripts/launch.sh &
+$HOME/.config/bspwm/autoload/swallow/bspswallow &
+$HOME/.screenlayout/default.sh &
+xwallpaper --output eDP1 --zoom ~/Downloads/Wallpapers/Forrest.jpg &
+xwallpaper --output DP2-3 --zoom ~/Downloads/Wallpapers/Forrest_L.jpg &
+pgrep bspswallow || bspswallow &
+xsetroot -cursor_name left_ptr &
+xset r rate 250 160 &
+unclutter -idle 3 &
+picom &
+xrdb ~/.config/x11/.Xresources &
+
+## Kill Auto started Programs If Already Running ##
+killall xsetroot -cursor_name && \
+killall left_ptr && \
+killall picom && \
+killall gammastep && \
+killall sxhkd && \
+killall ksuperkey && \
+killall xwallpaper && \
+killall xset && \
+killall unclutter && \
+killall xsettingsd && \
+killall bspswallow
