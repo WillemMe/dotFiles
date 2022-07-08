@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Compress the folder with foldername + date and take backup
+filename="backup_`date +%d`_`date +%m`_`date +%Y`.tar.gz";
+
+# Files to backup
+files="$HOME/.config $HOME/.local $HOME/Code $HOME/Documents/ $HOME/Music $HOME/vimwiki"
+
+# Create compressed file using tar and move to backup folder
+tar -czvf $BACKUP_DIR/$filename --ignore-failed-read --exclude={"$HOME/Code/Pytorch","$HOME/Code/GoldenEye-2022","$HOME/.config/discord","$HOME/.config/android","$HOME/.config/Microsoft","$HOME/.config/Code","$HOME/.local/share","$HOME/.local/lib","$HOME/.local/bin/joplin"} $files
+
+# List the content
+ls $BACKUP_DIR -al
+
+# List the disk usage
+du -sh $BACKUP_DIR

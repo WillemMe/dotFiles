@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#A script to generarte x amount of lorem ipsum words
+
+words=$(dmenu -i -p "Lorum Ipsum words:")
+lipsum -w $words | xclip -selection clipboard
